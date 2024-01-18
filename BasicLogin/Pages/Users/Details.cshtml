@@ -1,0 +1,42 @@
+﻿@page
+@model BasicLogin.Pages.Users.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Welcome!</h1>
+
+<div>
+    <h4> @Html.DisplayFor(model => model.UserAccount.FirstName) @Html.DisplayFor(model => model.UserAccount.LastName)</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserAccount.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserAccount.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserAccount.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserAccount.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserAccount.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserAccount.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserAccount.BirthDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserAccount.BirthDate)
+        </dd>
+    </dl>
+</div>
+@* <div>
+    <a asp-page="./Edit" asp-route-id="@Model.UserAccount.Id">Edit</a> 
+</div> *@

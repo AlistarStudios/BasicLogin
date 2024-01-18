@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Login Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Sign In</h1>
+
+</div>
+
+<div class="container d-flex justify-content-center">
+    <form method="post">
+        <div>
+            <label asp-for="Input.Email" class="form-label"></label>
+            <input asp-for="Input.Email" class="form-control" placeholder="Email" />
+            <span asp-validation-for="Input.Email" style="color: red;"></span>
+        </div>
+
+        <div>
+            <label asp-for="Input.Password" class="form-label"></label>
+            <input asp-for="Input.Password" class="form-control" type="password" placeholder="Password" />
+            <span asp-validation-for="Input.Password" style="color: red;"></span>
+        </div>
+
+        @if (Model.ErrorMessage != null)
+        {
+            <p style="color: red;">@Model.ErrorMessage</p>
+        }
+
+        <div>
+            &nbsp;
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type ="submit" class="btn btn-primary">Sign In</button>
+            <button class="btn btn-primary" asp-page="/users/create">Sign Up</button>
+        </div>
+    </form>
+
+@*     <div>
+        <a asp-page="/Users/Create">Sign Up</a>
+    </div> *@
+</div>
